@@ -1,0 +1,4 @@
+20150320 - 19:04:01: Log written by /home/kapilsharma/dev/kapil/CronEntry/tests/CronEntry/writelog.php. Args passed: CronEntry2
+20150320 - 19:05:01: Log written by /home/kapilsharma/dev/kapil/CronEntry/tests/CronEntry/writelog.php. Args passed: CronEntry2
+20150320 - 19:06:01: Log written by /home/kapilsharma/dev/kapil/CronEntry/tests/CronEntry/writelog.php. Args passed: CronEntry2
+20150320 - 19:07:01: Log written by /home/kapilsharma/dev/kapil/CronEntry/tests/CronEntry/writelog.php. Args passed: CronEntry2

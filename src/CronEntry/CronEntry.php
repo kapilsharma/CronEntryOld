@@ -23,14 +23,60 @@ class CronEntry {
     private $dayOfMonth = null;
     private $month = null;
     private $dayOfWeek = null;
+    private $command = null;
 
-    public function __construct()
+    private $user;
+    private $file;
+
+    public function __construct($user, $file)
     {
         $this->minute = new Minute();
         $this->hour = new Hour();
         $this->dayOfMonth = new DayOfMonth();
         $this->month = new Month();
         $this->dayOfWeek = new DayOfWeek();
+
+        $this->user = $user;
+        $this->file = $file;
+    }
+
+    public function writeCron()
+    {
+        $this->writeFile();
+        $this->writeCrontab();
+    }
+
+    private function writeCrontab()
+    {
+        $output = shell_exec('crontab -u ' . $this->user . ' ' . $this->file);
+    }
+
+    private function writeFile()
+    {
+        file_put_contents($this->file, $this->getCronFormattedCommand(), LOCK_EX);
+    }
+
+    public function getCronFormattedCommand()
+    {
+        $cronEntry = "";
+        $cronEntry .= $this->minute->makeNumberFromAssets();
+        $cronEntry .= ' ' . $this->hour->makeNumberFromAssets();
+        $cronEntry .= ' ' . $this->dayOfMonth->makeNumberFromAssets();
+        $cronEntry .= ' ' . $this->month->makeNumberFromAssets();
+        $cronEntry .= ' ' . $this->dayOfWeek->makeNumberFromAssets();
+        $cronEntry .= ' ' . $this->command . "\n";
+
+        return $cronEntry;
+    }
+
+    public function getCommand()
+    {
+        return $this->command;
+    }
+
+    public function setCommand($command)
+    {
+        $this->command = $command;
     }
 
     public function getMinutes()

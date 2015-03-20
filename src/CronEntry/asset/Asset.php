@@ -19,5 +19,37 @@ class Asset {
         $this->fraction = $fraction;
     }
 
+    /**
+     * @return mixed
+     */
+    public function getInterval()
+    {
+        return $this->interval;
+    }
+
+    /**
+     * @return boolean
+     */
+    public function isFraction()
+    {
+        return $this->fraction;
+    }
+
+    /**
+     * @param boolean $fraction
+     */
+    public function setFraction($fraction)
+    {
+        $this->fraction = $fraction;
+    }
+
+    /**
+     * @param mixed $interval
+     */
+    public function setInterval($interval)
+    {
+        $this->interval = $interval;
+    }
+
 
 }

@@ -9,21 +9,38 @@
 namespace cronentry\asset;
 
 abstract class AbstractCronTime {
-    private $asset;
+    protected $assets;
 
     public function __construct(AssetCollection $assetCollection = null)
     {
         if ($assetCollection == null) {
-            $this->asset = new AssetCollection();
+            $this->assets = new AssetCollection();
         } else {
-            $this->asset = $assetCollection;
+            $this->assets = $assetCollection;
         }
     }
 
     public function addAsset(Asset $asset)
     {
         $this->isValid();
-        $this->asset->addAsset($asset);
+        $this->assets->addAsset($asset);
+    }
+
+    public function makeNumberFromAssets()
+    {
+        $minutes = array();
+        $assets = $this->assets->getAssets();
+        foreach($assets as $asset) {
+            $minutes[] = $asset->getInterval();
+        }
+
+        if(count($minutes) > 0) {
+            $minute = implode(',', $minutes);
+        } else {
+            $minute = '*';
+        }
+
+        return $minute;
     }
 
     abstract function isValid();

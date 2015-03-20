@@ -11,12 +11,20 @@ use cronentry\CronEntry;
 
 require '../../vendor/autoload.php';
 
-$cronEntry = new CronEntry();
-$cronEntry->getMinutes()->addAsset(new Asset(5, true));
+$cronEntry = new CronEntry('kapilsharma', '/home/kapilsharma/dev/kapil/CronEntry/tests/CronEntry/cronfile');
 
+//for ($i = 0; $i <= 60; $i += 5) {
+//    $cronEntry->getMinutes()->addAsset(new Asset($i, true));
+//}
 
-print_r($cronEntry);
+$cronEntry->getHours()->addAsset(new Asset(19, true));
+$cronEntry->setCommand('/usr/bin/php /home/kapilsharma/dev/kapil/CronEntry/tests/CronEntry/writelog.php CronEntry2');
+
+echo $cronEntry->getCronFormattedCommand() . PHP_EOL;
+$cronEntry->writeCron();
+
+//print_r($cronEntry);
 
 //Showing cron entry
-$output = shell_exec('crontab -l');
-echo 'output = ' . $output;
+//$output = shell_exec('crontab -l');
+//echo 'output = ' . $output;
