@@ -24,6 +24,7 @@ class CronEntry {
     private $month = null;
     private $dayOfWeek = null;
     private $command = null;
+    private $cronAdapter = null;
 
     private $user;
     private $file;
