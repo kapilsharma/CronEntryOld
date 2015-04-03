@@ -14,8 +14,10 @@
     },
     "autoload": {
         "psr-4": {
-            "cronentry\\": "src/CronEntry",
-            "cronentry\\test\\": "tests/CronEntry"
+            "CronEntry\\": "src/CronEntry",
+            "CronEntry\\test\\": "tests/CronEntry",
+            "CronTabAdapter": "src/CronTabAdapter",
+            "DbAdapter": "src/DbAdapter"
         }
     },
     "scripts": {

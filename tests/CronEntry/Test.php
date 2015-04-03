@@ -1,12 +1,15 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: kapilsharma
- * Date: 19/3/15
- * Time: 6:44 PM
- */
 
-use cronentry\asset\Asset;
+use CronEntry\CronEntry;
+
+require '../../vendor/autoload.php';
+
+$cronEntry - new CronEntry('kapilsharma', '/home/kapilsharma/dev/kapil/CronEntry/tests/CronEntry/cronfile');
+
+// ToDo: Remove Old code below. Just kept for picking up some old code functions.
+/*
+ *
+ *use cronentry\asset\Asset;
 use cronentry\CronEntry;
 
 require '../../vendor/autoload.php';
@@ -28,3 +31,5 @@ $cronEntry->writeCron();
 //Showing cron entry
 //$output = shell_exec('crontab -l');
 //echo 'output = ' . $output;
+
+*/
