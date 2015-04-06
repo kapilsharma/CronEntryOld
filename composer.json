@@ -16,8 +16,8 @@
         "psr-4": {
             "CronEntry\\": "src/CronEntry",
             "CronEntry\\test\\": "tests/CronEntry",
-            "CronTabAdapter": "src/CronTabAdapter",
-            "DbAdapter": "src/DbAdapter"
+            "CronTabAdapter\\": "src/CronTabAdapter",
+            "Service\\": "src/Service"
         }
     },
     "scripts": {

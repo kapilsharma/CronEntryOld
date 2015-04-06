@@ -1,10 +1,14 @@
 <?php
 
 use CronEntry\CronEntry;
+use Service\CronDbService;
 
 require '../../vendor/autoload.php';
 
-$cronEntry - new CronEntry('kapilsharma', '/home/kapilsharma/dev/kapil/CronEntry/tests/CronEntry/cronfile');
+$cronEntry = new CronEntry('kapilsharma', '/home/kapilsharma/dev/kapil/CronEntry/tests/CronEntry/cronfile');
+
+$cronEntry->readFromDatabase(new CronDbService());
+$cronEntry->save();
 
 // ToDo: Remove Old code below. Just kept for picking up some old code functions.
 /*

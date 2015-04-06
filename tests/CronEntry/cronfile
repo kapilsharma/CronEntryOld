@@ -1,1 +1,2 @@
-* 19 * * * /usr/bin/php /home/kapilsharma/dev/kapil/CronEntry/tests/CronEntry/writelog.php CronEntry2
+* 10-18 * * * /usr/bin/php /home/kapilsharma/dev/kapil/CronEntry/tests/CronEntry/writelog.php CronEntryFromDB1
+*/5 10-18 * * * /usr/bin/php /home/kapilsharma/dev/kapil/CronEntry/tests/CronEntry/writelog.php CronEntryFromDB2-5Minutes

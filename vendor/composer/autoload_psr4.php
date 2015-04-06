@@ -6,8 +6,8 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'dbadapter' => array($baseDir . '/src/DbAdapter'),
-    'cronentry\\test\\' => array($baseDir . '/tests/CronEntry'),
-    'cronentry\\' => array($baseDir . '/src/CronEntry'),
-    'cronadapter' => array($baseDir . '/src/CronAdapter'),
+    'Service\\' => array($baseDir . '/src/Service'),
+    'CronTabAdapter\\' => array($baseDir . '/src/CronTabAdapter'),
+    'CronEntry\\test\\' => array($baseDir . '/tests/CronEntry'),
+    'CronEntry\\' => array($baseDir . '/src/CronEntry'),
 );
