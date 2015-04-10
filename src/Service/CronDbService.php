@@ -10,6 +10,8 @@ namespace Service;
 
 class CronDbService {
 
+    public function
+
     /**
      * This is not original service but just a dummy service.
      * Original service is supposed to connect to the database and return all cron jobs

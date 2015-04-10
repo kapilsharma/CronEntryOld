@@ -16,6 +16,10 @@ class CronAdapter {
     private $user;
     private $tempFile;
 
+    const AUTH_SHELL = 1;
+    const AUTH_SSH = 2;
+    const AUTH_SSH_KEY = 3;
+
     public function __construct(SchedulerCollectionInterface $cronJobsCollection, $user, $tempFile)
     {
         $this->cronJobs = $cronJobsCollection;
@@ -23,15 +27,19 @@ class CronAdapter {
         $this->tempFile = $tempFile;
     }
 
-    public function setSsh()
-    {
-
-    }
-
-    public function save()
+    public function save($auth = CronAdapter::AUTH_SHELL)
     {
         $this->writeFile();
-        $this->writeLocalCronTab();
+
+        switch ($suth) {
+            case CronAdapter::AUTH_SHELL:
+                $this->writeLocalCronTab();
+                break;
+            case CronAdapter::AUTH_SSH:
+                break;
+            case CronAdapter::AUTH_SSH_KEY;
+                break;
+        }
     }
 
     public function writeLocalCronTab()
